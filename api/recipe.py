@@ -20,7 +20,7 @@ class handler(BaseHTTPRequestHandler):
         try:
             # 3. Gemini API 설정 (환경변수에서 키 가져오기)
             genai.configure(api_key=os.environ.get('GEMINI_API_KEY'))
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-flash-latest')
 
             # 4. AI에게 질문하기
             prompt = f"다음 재료로 만들 수 있는 요리 레시피를 추천해줘: {ingredients}"
