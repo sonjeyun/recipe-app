@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>냉장고 요리사 🍳</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 상단 네비게이션 -->
+    <nav>
+        <div class="logo">🍳 냉장고 요리사</div>
+        <ul class="menu">
+            <li><a href="#home">홈</a></li>
+            <li><a href="#recipe">레시피 추천</a></li>
+            <li><a href="#about">소개</a></li>
+        </ul>
+    </nav>
+
+    <!-- 섹션 1: 홈 -->
+    <section id="home">
+        <h1>냉장고 속 재료로 요리 완성! 🥕</h1>
+        <p>가지고 있는 재료를 입력하면 AI가 딱 맞는 레시피를 추천해드려요.</p>
+    </section>
+
+    <!-- 섹션 2: 레시피 추천 -->
+    <section id="recipe">
+        <h2>레시피 추천받기</h2>
+        <p>가진 재료를 입력해보세요! (쉼표로 구분: 예) 계란, 양파, 김치)</p>
+
+        <!-- 재료 입력 영역 -->
+        <div class="input-area">
+            <input type="text" id="ingredientInput" placeholder="예) 계란, 양파, 대파">
+            <button id="submitBtn">레시피 추천받기 🍳</button>
+        </div>
+
+        <!-- 결과가 표시될 영역 -->
+        <div id="result"></div>
+    </section>
+
+    <!-- 섹션 3: 소개 -->
+    <section id="about">
+        <h2>서비스 소개</h2>
+        <p>냉장고 요리사는 남는 재료를 활용해 음식물 쓰레기를 줄이고, 맛있는 한 끼를 도와줍니다.</p>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

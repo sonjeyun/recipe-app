@@ -1,0 +1,124 @@
+/* ===== 기본 설정 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Malgun Gothic', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ===== 상단 네비게이션 ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ff7043;  /* 주황색 */
+    position: sticky;           /* 스크롤해도 상단 고정 */
+    top: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    list-style: none;   /* 점 없애기 */
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;   /* 밑줄 없애기 */
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ffe0b2;   /* 마우스 올리면 밝은 주황 */
+}
+
+/* ===== 섹션 공통 ===== */
+section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+section h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* ===== 섹션별 배경색 ===== */
+#home {
+    background-color: #fff3e0;   /* 연한 주황 */
+}
+
+#recipe {
+    background-color: #ffffff;   /* 흰색 */
+}
+
+#about {
+    background-color: #f5f5f5;   /* 연한 회색 */
+}
+/* ===== 재료 입력 영역 ===== */
+.input-area {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 입력창 */
+#ingredientInput {
+    width: 400px;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ff7043;
+    border-radius: 8px;
+    outline: none;   /* 클릭 시 파란 테두리 제거 */
+}
+
+#ingredientInput:focus {
+    border-color: #e64a19;   /* 클릭하면 진한 주황 */
+}
+
+/* 버튼 */
+#submitBtn {
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff7043;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;   /* 마우스 손가락 모양 */
+    transition: 0.3s;
+}
+
+#submitBtn:hover {
+    background-color: #e64a19;   /* 마우스 올리면 진한 주황 */
+}
+
+/* 결과 표시 영역 */
+#result {
+    margin-top: 30px;
+    font-size: 18px;
+}
