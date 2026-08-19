@@ -13,7 +13,20 @@ button.addEventListener("click", function () {
         return;   // 여기서 함수 종료
     }
 
-    // 4. 입력이 정상이면 결과 영역에 표시 (지금은 확인용)
-    result.innerHTML = `<p>입력한 재료: <strong>${ingredients}</strong></p>`;
-    console.log("입력된 재료:", ingredients);
-});
+    // 4. 로딩 표시
+    result.innerHTML = "<p>🍳 레시피를 만들고 있어요... 잠깐만요!</p>";
+
+    // 5. 백엔드로 재료 전송
+    fetch("/api/recipe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ingredients: ingredients })
+    })
+    .then(response => response.json())
+    .then(data => {
+        result.innerHTML = `<p>${data.recipe}</p>`;
+    })
+    .catch(error => {
+        result.innerHTML = "<p>😢 오류가 발생했어요. 다시 시도해주세요!</p>";
+        console.error("에러:", error);
+    });
