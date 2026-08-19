@@ -5,6 +5,3 @@ requires-python = ">=3.9"
 dependencies = [
     "google-generativeai"
 ]
-
-[tool.vercel]
-entrypoint = "api.recipe:handler"
