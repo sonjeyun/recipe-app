@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레시피 추천 🍳</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 상단 네비게이션 (똑같이 복사!) -->
+    <nav>
+        <div class="logo">🍳 냉장고 요리사</div>
+        <ul class="menu">
+            <li><a href="index.html">홈</a></li>
+            <li><a href="recipe.html">레시피 추천</a></li>
+            <li><a href="about.html">소개</a></li>
+        </ul>
+    </nav>
+
+    <!-- 레시피 추천 내용 -->
+    <section id="recipe">
+        <h2>레시피 추천받기</h2>
+        <p>가진 재료를 입력해보세요! (쉼표로 구분: 예) 계란, 양파, 김치)</p>
+
+        <div class="input-area">
+            <input type="text" id="ingredientInput" placeholder="예) 계란, 양파, 대파">
+            <button id="submitBtn">레시피 추천받기 🍳</button>
+        </div>
+
+        <div id="result"></div>
+    </section>
+
+    <!-- ⭐ main.js는 여기에만! (입력폼이 여기 있으니까) -->
+    <script src="js/main.js"></script>
+</body>
+</html>
