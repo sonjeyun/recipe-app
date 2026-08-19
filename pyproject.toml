@@ -1,0 +1,10 @@
+[project]
+name = "recipe-app"
+version = "1.0.0"
+requires-python = ">=3.9"
+dependencies = [
+    "google-generativeai"
+]
+
+[tool.vercel]
+entrypoint = "api.recipe:handler"
