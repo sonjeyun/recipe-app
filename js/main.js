@@ -29,4 +29,5 @@ button.addEventListener("click", function () {
     .catch(error => {
         result.innerHTML = "<p>😢 오류가 발생했어요. 다시 시도해주세요!</p>";
         console.error("에러:", error);
-    });
+    });     // ← fetch 끝 (②닫기)
+});         
