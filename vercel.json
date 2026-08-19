@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/recipe.py": {
+      "runtime": "python3.9"
+    }
+  }
+}
