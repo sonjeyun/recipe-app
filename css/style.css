@@ -122,3 +122,35 @@ section p {
     margin-top: 30px;
     font-size: 18px;
 }
+/* ===== 다크 모드 ===== */
+body.dark {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+/* 다크모드 섹션 배경 */
+body.dark #home,
+body.dark #recipe,
+body.dark #about {
+    background-color: #1a1a1a;
+}
+
+/* 다크모드 입력창 */
+body.dark #ingredientInput {
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+}
+
+/* 다크모드 설명글 */
+body.dark section p {
+    color: #ccc;
+}
+
+/* 다크모드 버튼 */
+#darkModeBtn {
+    cursor: pointer;
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: white;
+}

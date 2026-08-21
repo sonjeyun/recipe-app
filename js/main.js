@@ -31,3 +31,19 @@ button.addEventListener("click", function () {
         console.error("에러:", error);
     });     // ← fetch 끝 (②닫기)
 });         
+// ===== 다크 모드 =====
+const darkBtn = document.getElementById("darkModeBtn");
+
+// 버튼이 있을 때만 작동! (안전장치)
+if (darkBtn) {
+    darkBtn.addEventListener("click", function () {
+        document.body.classList.toggle("dark");
+        
+        // 아이콘 바꾸기
+        if (document.body.classList.contains("dark")) {
+            darkBtn.textContent = "☀️";
+        } else {
+            darkBtn.textContent = "🌙";
+        }
+    });
+}
