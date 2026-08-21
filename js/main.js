@@ -1,45 +1,43 @@
 // 1. HTML 요소들을 가져오기
-const input = document.getElementById("ingredientInput");   // 입력창
-const button = document.getElementById("submitBtn");        // 버튼
-const result = document.getElementById("result");           // 결과 영역
+const input = document.getElementById("ingredientInput");
+const button = document.getElementById("submitBtn");
+const result = document.getElementById("result");
 
-// 2. 버튼을 클릭했을 때 실행할 함수
-button.addEventListener("click", function () {
-    const ingredients = input.value.trim();   // 입력값에서 앞뒤 공백 제거
+// ⭐ if 열기!
+if (button) {
+    button.addEventListener("click", function () {
+        const ingredients = input.value.trim();
 
-    // 3. 유효성 검사 — 빈 입력 방지
-    if (ingredients === "") {
-        alert("재료를 하나 이상 입력해주세요! 🥕");
-        return;   // 여기서 함수 종료
-    }
+        if (ingredients === "") {
+            alert("재료를 하나 이상 입력해주세요! 🥕");
+            return;
+        }
 
-    // 4. 로딩 표시
-    result.innerHTML = "<p>🍳 레시피를 만들고 있어요... 잠깐만요!</p>";
+        result.innerHTML = "<p>🍳 레시피를 만들고 있어요... 잠깐만요!</p>";
 
-    // 5. 백엔드로 재료 전송
-    fetch("/api/recipe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ingredients: ingredients })
-    })
-    .then(response => response.json())
-    .then(data => {
-        result.innerHTML = `<p>${data.recipe}</p>`;
-    })
-    .catch(error => {
-        result.innerHTML = "<p>😢 오류가 발생했어요. 다시 시도해주세요!</p>";
-        console.error("에러:", error);
-    });     // ← fetch 끝 (②닫기)
-});         
+        fetch("/api/recipe", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ingredients: ingredients })
+        })
+        .then(response => response.json())
+        .then(data => {
+            result.innerHTML = `<p>${data.recipe}</p>`;
+        })
+        .catch(error => {
+            result.innerHTML = "<p>😢 오류가 발생했어요. 다시 시도해주세요!</p>";
+            console.error("에러:", error);
+        });
+    });
+}   // ⭐ if 닫기!
+
 // ===== 다크 모드 =====
 const darkBtn = document.getElementById("darkModeBtn");
 
-// 버튼이 있을 때만 작동! (안전장치)
 if (darkBtn) {
     darkBtn.addEventListener("click", function () {
         document.body.classList.toggle("dark");
         
-        // 아이콘 바꾸기
         if (document.body.classList.contains("dark")) {
             darkBtn.textContent = "☀️";
         } else {
